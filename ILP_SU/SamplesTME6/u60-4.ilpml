@@ -1,0 +1,5 @@
+function f(x,y,z,k) ( let x= x+2 and y=x+4 and z=x+y in 2 * x + z - y + k);
+x = 12;
+y = 2;
+let x = 3 and y=10 * x in
+f(3 * x, 2+y, 4, 9 )
