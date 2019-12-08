@@ -1,0 +1,9 @@
+Si vous avez le temps, vous pourrez ajouter l’optimisation suivante : la suppression des va-
+riables et fonctions inutiles. Il s’agit de supprimer du programme les déclarations de variables lo-
+cales, de variables globales et de fonctions globales qui ne sont pas utilisées dans le programme.
+Attention, si une variable globale n’est utilisée que dans une fonction globale jamais appelée,
+cette variable globale ne doit pas être considérée comme utilisée. Comme pour l’intégration des
+fonctions, cette optimisation nécessite deux étapes : d’abord une analyse statique, déterminant
+les variables et fonctions inutiles, suivie d’une étape de reconstruction de l’AST. Cette optimisa-
+tion sera particulièrement efficace si elle est effectuée après l’intégration des fonctions (mais elle
+peut être utilisée indépendemment de l’intégration des fonctions).
