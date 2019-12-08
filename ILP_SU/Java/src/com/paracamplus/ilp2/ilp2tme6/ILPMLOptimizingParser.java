@@ -1,6 +1,7 @@
 package com.paracamplus.ilp2.ilp2tme6;
 
 import antlr4.*;
+import com.paracamplus.ilp1.ast.*;
 import com.paracamplus.ilp1.compiler.normalizer.*;
 import com.paracamplus.ilp1.parser.*;
 import com.paracamplus.ilp2.interfaces.*;
@@ -29,6 +30,9 @@ public class ILPMLOptimizingParser extends ILPMLParser {
             ParseTreeWalker walker = new ParseTreeWalker();
             ILPMLListener extractor = new ILPMLListener((IASTfactory)factory);
             walker.walk(extractor, tree);
+            CallAnalysis callAnalysis=new CallAnalysis((IASTfactory)factory);
+            callAnalysis.visit(tree.node,null);
+            System.out.println(callAnalysis.graph+" here is graph");
             CopyTransform copyTransform =new RenameTransform((IASTfactory)factory);
             return copyTransform.visit(tree.node, NormalizationEnvironment.EMPTY);
         } catch (Exception e) {
