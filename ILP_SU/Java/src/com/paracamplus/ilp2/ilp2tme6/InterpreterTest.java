@@ -17,8 +17,8 @@ public class InterpreterTest extends com.paracamplus.ilp2.interpreter.test.Inter
     public InterpreterTest(File file) {
         super(file);
     }
-    protected static String[] samplesDirName = { "SamplesTME6"  };
-    protected static String pattern = "ur?[0-78]\\d*-[123456](gfv)?";
+    protected static String[] samplesDirName = { "SamplesTME6" ,"SamplesILP2", "SamplesILP1"  };
+    protected static String pattern = "ur?[0-78]\\d*-[1234567](gfv)?";
     protected static String XMLgrammarFile = "XMLGrammars/grammar2.rng";
 
 

@@ -23,14 +23,14 @@ public class CopyTransform<Data> implements IASTvisitor<IASTexpression,Data, Com
         int i=0;
         for(IASTfunctionDefinition fd: functions){
             IASTvariable[] vars= fd.getVariables();
-            IASTvariable[] newvars= fd.getVariables();
+            IASTvariable[] newargs= fd.getVariables();
             int j=0;
             for(IASTvariable v :vars){
-                newvars[j++]=factory.newVariable(v.getName());
+                newargs[j++]=factory.newVariable(v.getName());
             }
             IASTexpression newbd=fd.getBody().accept(this,data);
             newfunctions[i++]=factory.newFunctionDefinition(
-                    factory.newVariable(fd.getFunctionVariable().getName()),newvars,newbd);
+                    factory.newVariable(fd.getFunctionVariable().getName()),newargs,newbd);
         }
         IASTexpression body = program.getBody();
         IASTexpression newbody = body.accept(this, data);

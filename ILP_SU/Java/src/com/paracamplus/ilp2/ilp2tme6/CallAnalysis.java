@@ -58,7 +58,7 @@ public class CallAnalysis extends CopyTransform<String> {
     }
 
 
-    boolean isRecursive(IASTvariable f) throws EvaluationException {
+    boolean isRecursive(IASTvariable f) throws CompilationException {
         String callerName=f.getName();
         Set<String> alreadyVisited = new HashSet<>();
         alreadyVisited.add(callerName);
